@@ -1,5 +1,11 @@
+import Header from 'components/Header/Header';
+
 function Layout() {
-  return <div>Layout</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
 
 export default Layout;

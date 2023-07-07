@@ -1,11 +1,13 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import Header from './Header/Header';
-import Cast from './Cast/Cast';
-import Layout from './Layout/Layout';
-import MovieInfo from './MovieInfo/MovieInfo';
-import MovieList from './MovieList/MovieList';
-import Reviews from './Reviews/Reviews';
-import SearchMovies from './SearchMovies/SearchMovies';
+import { lazy } from 'react';
+
+const PageNotFound = lazy(() => import('./pages/pageNotFound'));
+const Layout = lazy(() => import('./Layout/Layout'));
+const Home = lazy(() => import('./pages/Home'));
+const Movies = lazy(() => import('./pages/Movies'));
+const MovieDetails = lazy(() => import('./pages/MovieDetails'));
+const Cast = lazy(() => import('./Cast/Cast'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
 
 export const App = () => {
   return (
@@ -13,7 +15,13 @@ export const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="movies" element={<Movies />} />
+        <Route path="movies/:movieId" element={<MovieDetails />}>
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
       </Route>
+      <Route path="*" element={<Navigate to="/" replace />} />
+      {/* <Route path="*" element={<PageNotFound} /> */}
     </Routes>
   );
 };
