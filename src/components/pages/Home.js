@@ -1,5 +1,5 @@
 import Loader from 'components/Loader/Loader';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getTrandingMovies } from 'API/API';
 import MovieList from 'components/MovieList/MovieList';
 
