@@ -1,6 +1,4 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import React, { lazy } from 'react';
-
 import Movies from './pages/Movies';
 import Layout from './Layout/Layout';
 import Home from './pages/Home';

@@ -27,4 +27,12 @@ function MovieInfo({ movie }) {
   );
 }
 
+MovieInfo.propTypes = {
+  poster_path: PropTypes.string,
+  title: PropTypes.string,
+  vote_average: PropTypes.number,
+  overview: PropTypes.string,
+  genres: PropTypes.string,
+};
+
 export default MovieInfo;
