@@ -3,7 +3,7 @@ import css from './Header.module.css';
 
 function Header() {
   const ActiveClassName = ({ isActive }) =>
-    isActive ? css['active'] : css[navLink];
+    isActive ? css['active'] : css['navLink'];
   return (
     <nav>
       <div className={css.containerNav}>

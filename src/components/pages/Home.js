@@ -9,9 +9,18 @@ function Home() {
 
   useEffect(() => {
     setShowLoader(true);
-    getTrandingMovies()
-      .then(data => setTrendingMovies(data))
-      .finally(showLoader(false));
+    const loadMovies = async () => {
+      try {
+        const data = await getTrandingMovies();
+        setTrendingMovies(data.results);
+
+        setShowLoader(false);
+      } catch (error) {
+        console.error('Error fetching trending movies:', error);
+      }
+    };
+    loadMovies();
+    console.log(trendingMovies);
   }, []);
 
   return (

@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 
 function MovieList({ movies }) {
   const location = useLocation();
-
   return (
     <ul>
       {movies.map(movie => (
         <li
           key={movie.id}
           to={`/movies/:${movie.id}`}
-          state={{ from: Location }}
+          state={{ from: location }}
         >
           <Link to={`/movies/${movie.id}`} state={{ from: location }}>
             {movie.title}
