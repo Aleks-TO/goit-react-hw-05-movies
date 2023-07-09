@@ -18,7 +18,7 @@ const Movies = () => {
 
     setMovies(null);
 
-    getMoviesByName(query)
+    getSearchMovieByName(query)
       .then(data => {
         if (data.results.length < 1) {
           setMovies(null);
