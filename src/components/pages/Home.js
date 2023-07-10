@@ -20,7 +20,7 @@ function Home() {
       }
     };
     loadMovies();
-    console.log(trendingMovies);
+    // console.log(trendingMovies);
   }, []);
 
   return (
